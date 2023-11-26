@@ -1,13 +1,15 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import Home from "../pages/Home";
 
-const Main = () => {
+const Main = ({ children }) => {
   return (
     <>
-      <Navbar />
-      <div className="container mx-auto"></div>
-      <Footer />
+      <div className="container mx-auto">
+        <Main>{children}</Main>
+        <Footer />
+      </div>
     </>
   );
 };

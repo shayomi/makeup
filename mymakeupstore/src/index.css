@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-primary bg-white;
+  @apply font-primary bg-white max-w-[1240px] w-full mx-auto;
 }
 
 li {
