@@ -14,7 +14,7 @@
     @apply px-3 py-1  justify-start rounded-[12px] hover:bg-primary hover:text-dark duration-500 ease-in-out cursor-default;
   }
 
-  .btn {
-    @apply rounded-[12px] bg-[#ffd470] px-6 py-2 text-dark  font-primary font-semibold tracking-[0.02em] outline-none hover:bg-[#b39140] transition-all duration-300 flex justify-center items-center;
+  .btn-primary {
+    @apply rounded-[12px] bg-[#ffd470] px-8 text-sm py-4 text-dark  font-primary font-semibold tracking-[0.02em] outline-none hover:bg-[#b39140] transition-all duration-300 flex justify-center items-center;
   }
 }
