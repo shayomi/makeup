@@ -15,23 +15,27 @@ const TopProducts = () => {
     <div className="w-[95%] mx-auto mt-10">
       <div className="flex flex-row justify-between px-6">
         <h2 className="text-xl font-secondary font-semibold text-dark">
-          Clean Beauty
+          Cover Girl
         </h2>
         <button className="btn-primary">See more</button>
       </div>
-      <div>
+      <div className="grid grid-cols-4 gap-x-4  mt-12">
         {products.map((product) => {
           return (
             <div
               key={product.id}
-              className="flex flex-col gap-y-4 items-center justify-center"
+              className="px-6 py-3 hover:shadow-xl ease-in-out duration-500 transition-all cursor-pointer "
             >
-              <div className="  mt-6">
-                <img src={product.image_link} alt={product.name} />
-                <h2 className="text-xl font-secondary font-semibold text-dark ">
-                  {product.name}
+              <div className=" flex flex-col gap-y-4 justify-center">
+                <img
+                  src={product.image_link}
+                  alt={product.name}
+                  className="max-w-[100px] mx-auto mix-blend-multiply"
+                />
+                <h2 className="text-md font-primary font-medium text-dark ">
+                  {product.name.substring(0, 50) + " " + "..."}
                 </h2>
-                <h2 className="text-xl font-secondary font-semibold text-dark ">
+                <h2 className="text-md font-secondary font-semibold text-dark ">
                   $ {product.price}
                 </h2>
               </div>
