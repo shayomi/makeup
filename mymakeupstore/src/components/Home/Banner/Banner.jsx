@@ -1,9 +1,9 @@
 import React from "react";
-import Bannerimg from "../../assets/img/home/banner.png";
+import Bannerimg from "../../../assets/img/home/banner.png";
 
 const Banner = () => {
   return (
-    <div className="w-[95%] mx-auto mt-2">
+    <div className="w-[95%] mx-auto pt-24">
       <div className="flex-col md:grid grid-cols-2 px-6">
         <div className="hidden md:flex flex-col gap-y-2 max-w-[90%] pt-16">
           <h2 className="h2">

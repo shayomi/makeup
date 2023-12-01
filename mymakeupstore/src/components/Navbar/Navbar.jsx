@@ -12,7 +12,7 @@ const Navbar = () => {
     setNav(!nav);
   };
   return (
-    <nav className="max-w-[1240px] w-full  z-50 bg-white">
+    <nav className="max-w-[1240px] w-full fixed z-40 bg-white">
       <div className="flex flex-row px-3 w-[95%] mx-auto py-4 h-[60px] items-center justify-between">
         <Brandlink />
         <div className="hidden md:flex flex-row gap-x-8 px-3">
@@ -21,6 +21,12 @@ const Navbar = () => {
             className="px-4 py-2 rounded-[12px] hover:bg-primary  duration-500 ease-in-out"
           >
             Home
+          </NavLink>
+          <NavLink
+            to="/store"
+            className="px-4 py-2 rounded-[12px] hover:bg-primary  duration-500 ease-in-out"
+          >
+            Store
           </NavLink>
           <NavLink
             to="search"
@@ -57,6 +63,12 @@ const Navbar = () => {
                 className="px-4 py-2 rounded-[12px] hover:bg-primary  duration-500 ease-in-out"
               >
                 Home
+              </NavLink>
+              <NavLink
+                to="/"
+                className="px-4 py-2 rounded-[12px] hover:bg-primary  duration-500 ease-in-out"
+              >
+                Store
               </NavLink>
               <NavLink
                 to="search"
