@@ -41,7 +41,7 @@ const ProductDetails = () => {
           <img
             src={product.image_link}
             alt={product.name}
-            className="max-w-[400px] mx-auto mix-blend-multiply"
+            className="max-w-[500px] mx-auto mix-blend-multiply items-center"
           />
         </div>
         <div className="flex flex-col gap-y-6 ">
