@@ -9,10 +9,7 @@ const Store = () => {
   return (
     <div className="w-[95%] mx-auto pt-12">
       <Hero />
-      <div className="flex flex-row items-center justify-evenly ">
-        <Search />
-        <Brands />
-      </div>
+      <ProductItem />
     </div>
   );
 };
