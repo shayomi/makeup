@@ -5,6 +5,14 @@ import Loader from "../../../Loader";
 
 import { NavLink } from "react-router-dom";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 const ProductFilter = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -150,67 +158,85 @@ const ProductFilter = () => {
   return (
     <div className="mt-10 mb-24">
       <div className="">
-        <div className="hidden lg:flex flex-row border-b-[1px] border-slate-300 pb-6  ">
-          <div className="flex items-center mt-4 px-2">
-            <label className="mr-2">Search:</label>
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => handleSearchChange(e.target.value)}
-              placeholder="Search products"
-              className=" w-[300px] text-[11px] font-primary font-normal  border-[1px] border-slate-400 rounded-[8px] py-2 px-4 h-[38px]"
-            />
-          </div>
-
-          <div className="flex  items-center mt-4 px-2">
-            <label className="mr-2 font-primary text-sm"> Brands:</label>
-            <select
-              onChange={(e) => handleBrandChange(e.target.value)}
-              value={selectedBrand}
-              className=" border-[1px] border-slate-400 rounded-[8px] py-2 px-4 text-sm font-primary "
-            >
-              <option value="all">All</option>
-              {Array.from(
-                new Set(products.map((product) => product.brand))
-              ).map((brand) => (
-                <option key={brand} value={brand}>
-                  {brand}
-                </option>
-              ))}
-            </select>
-          </div>
+        <div className="flex flex-col border-b-[1px] border-slate-300 pb-6 gap-y-4  ">
           <div className="flex items-center mt-4 px-2">
             <label className="mr-2 font-primary text-sm">Products:</label>
-            <select
-              onChange={(e) => handleTypeChange(e.target.value)}
-              value={selectedType}
-              className=" border-[1px] border-slate-400 rounded-[8px] py-2 px-4 text-sm font-primary "
+
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              breakpoints={{
+                360: { width: 360, slidesPerView: 3 },
+                768: { width: 768, slidesPerView: 5 },
+                1024: { width: 1024, slidesPerView: 7 },
+              }}
+              spaceBetween={5}
+              navigation
+              pagination={{ clickable: true }}
+              //   scrollbar={{ draggable: true }}
             >
-              <option value="all" className="">
-                Types
-              </option>
-              {Array.from(
-                new Set(products.map((product) => product.product_type))
-              ).map((type) => (
-                <option key={type} value={type}>
-                  {type}
-                </option>
-              ))}
-            </select>
+              <div className="flex">
+                {Array.from(
+                  new Set(products.map((product) => product.product_type))
+                ).map((type) => (
+                  <button
+                    key={type}
+                    onClick={() => handleTypeChange(type)}
+                    className={`${
+                      selectedType === type
+                        ? "bg-[#ffd470] text-dark"
+                        : "bg-transparent text-[11px] text-slate-600"
+                    } border-[1px] border-slate-400 rounded-[8px] py-2 px-4 text-sm font-primary mx-2 focus:outline-none`}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
+            </Swiper>
           </div>
-          <div className="flex items-center mt-4 px-2">
-            <label className="mr-2 font-primary text-sm">Price:</label>
-            <select
-              onChange={(e) => handlePriceRangeChange(e.target.value)}
-              value={selectedPriceRange}
-              className=" border-[1px] border-slate-400 rounded-[8px] py-2 px-4 text-sm font-primary "
-            >
-              <option value="all">All </option>
-              <option value="0-10">$0 - $10</option>
-              <option value="10-20">$10 - $20</option>
-              <option value="20-30">$20 - $30</option>
-              {/* Add more options as needed */}
-            </select>
+          <div className="flex flex-row justify-evenly items-center">
+            <div className="hidden lg:flex items-center mt-4 px-2">
+              <label className="mr-2">Search:</label>
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => handleSearchChange(e.target.value)}
+                placeholder="Search products"
+                className=" w-[300px] text-[11px] font-primary font-normal  border-[1px] border-slate-400 rounded-[8px] py-2 px-4 h-[38px]"
+              />
+            </div>
+
+            <div className="flex  items-center mt-4 px-2">
+              <label className="mr-2 font-primary text-sm"> Brands:</label>
+              <select
+                onChange={(e) => handleBrandChange(e.target.value)}
+                value={selectedBrand}
+                className=" border-[1px] border-slate-400 rounded-[8px] py-2 px-4 text-sm font-primary "
+              >
+                <option value="all">All</option>
+                {Array.from(
+                  new Set(products.map((product) => product.brand))
+                ).map((brand) => (
+                  <option key={brand} value={brand}>
+                    {brand}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex items-center mt-4 px-2">
+              <label className="mr-2 font-primary text-sm">Price:</label>
+              <select
+                onChange={(e) => handlePriceRangeChange(e.target.value)}
+                value={selectedPriceRange}
+                className=" border-[1px] border-slate-400 rounded-[8px] py-2 px-4 text-sm font-primary "
+              >
+                <option value="all">All </option>
+                <option value="0-10">$0 - $10</option>
+                <option value="10-20">$10 - $20</option>
+                <option value="20-30">$20 - $30</option>
+                {/* Add more options as needed */}
+              </select>
+            </div>
           </div>
         </div>
         {loading ? (
