@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { MdOutlineSearch } from "react-icons/md";
 import Loader from "../../../Loader";
-import SearchBar from "../../UI/Search";
+
 import { NavLink } from "react-router-dom";
 
 const ProductFilter = () => {
@@ -150,20 +150,19 @@ const ProductFilter = () => {
   return (
     <div className="mt-10 mb-24">
       <div className="">
-        <SearchBar data={currentProducts} />
-        <div className="flex flex-row border-b-[1px] border-slate-300 pb-6 ">
-          <div className="flex items-center mt-4 px-6">
+        <div className="hidden lg:flex flex-row border-b-[1px] border-slate-300 pb-6  ">
+          <div className="flex items-center mt-4 px-2">
             <label className="mr-2">Search:</label>
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => handleSearchChange(e.target.value)}
               placeholder="Search products"
-              className="text-[10px] font-primary font-normal  border-[1px] border-slate-400 rounded-[8px] py-2 px-4"
+              className=" w-[300px] text-[11px] font-primary font-normal  border-[1px] border-slate-400 rounded-[8px] py-2 px-4 h-[38px]"
             />
           </div>
 
-          <div className="flex  items-center mt-4 px-6">
+          <div className="flex  items-center mt-4 px-2">
             <label className="mr-2 font-primary text-sm"> Brands:</label>
             <select
               onChange={(e) => handleBrandChange(e.target.value)}
@@ -180,7 +179,7 @@ const ProductFilter = () => {
               ))}
             </select>
           </div>
-          <div className="flex items-center mt-4 px-6">
+          <div className="flex items-center mt-4 px-2">
             <label className="mr-2 font-primary text-sm">Products:</label>
             <select
               onChange={(e) => handleTypeChange(e.target.value)}
@@ -199,8 +198,8 @@ const ProductFilter = () => {
               ))}
             </select>
           </div>
-          <div className="flex items-center mt-4 px-6">
-            <label className="mr-2 font-primary text-sm">Price Range:</label>
+          <div className="flex items-center mt-4 px-2">
+            <label className="mr-2 font-primary text-sm">Price:</label>
             <select
               onChange={(e) => handlePriceRangeChange(e.target.value)}
               value={selectedPriceRange}

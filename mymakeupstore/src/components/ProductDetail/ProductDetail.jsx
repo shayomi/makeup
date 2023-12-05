@@ -41,7 +41,7 @@ const ProductDetails = () => {
           <img
             src={product.image_link}
             alt={product.name}
-            className="max-w-[500px] mx-auto mix-blend-multiply items-center"
+            className="max-w-[300px] w-[200px] mx-auto mix-blend-multiply items-center"
           />
         </div>
         <div className="flex flex-col gap-y-6 ">
@@ -51,21 +51,23 @@ const ProductDetails = () => {
           <h2 className="text-xl font-secondary font-semibold text-dark">
             {product.name}
           </h2>
-          <div className="flex  flex-row gap-x-5 items-center">
-            <h2 className="text-md font-secondary font-semibold text-dark ">
-              $ {product.price}
-            </h2>
-            <div className="flex flex-row gap-x-4 items-center ml-4">
-              <MdOutlineRemove size={25} />
+          <div className="flex flex-col gap-y-4  md:flex-row  gap-x-5 ">
+            <div className="flex flex-row gap-x-5 justify-between">
+              <h2 className="text-md font-secondary font-semibold text-dark ">
+                $ {product.price}
+              </h2>
+              <div className="flex flex-row gap-x-4 items-center ml-4">
+                <MdOutlineRemove size={25} />
 
-              <span>
-                <h2 className="text-xl font-secondary font-semibold text-dark">
-                  4
-                </h2>
-              </span>
-              <MdAdd size={25} />
+                <span>
+                  <h2 className="text-xl font-secondary font-semibold text-dark">
+                    4
+                  </h2>
+                </span>
+                <MdAdd size={25} />
+              </div>
             </div>
-            <button className="btn-primary ml-10">Add to cart</button>
+            <button className="btn-primary md:ml-10 ml-0">Add to cart</button>
           </div>
           <p className="font-primary text-sm text-dark leading-7 text-justify font-normal mt-6 ">
             {product.description}

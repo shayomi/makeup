@@ -7,6 +7,7 @@ import BestProducts from "../components/Home/Best/BestProducts";
 import Elegance from "../components/Home/Elegance/Elegance";
 import Mode from "../components/Home/mode/Mode";
 import Newsletter from "../components/Home/newsletter/Newsletter";
+import Newarrivals from "../components/Home/NewArrival/Newarrival";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <BestProducts />
       <Bottombanner />
       <Elegance />
+      <Newarrivals />
       <Mode />
       <Newsletter />
     </div>

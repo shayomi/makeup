@@ -20,7 +20,9 @@ const TopProducts = (props) => {
         <h2 className="text-sm lg:text-xl font-secondary font-semibold text-dark">
           Cover Girl
         </h2>
-        <button className="btn-primary">See more</button>
+        <NavLink to="/store">
+          <button className="btn-primary">See more</button>
+        </NavLink>
       </div>
       <div className=" grid grid-cols-2 md:grid-cols-4 gap-x-4 space-y-4 mt-12">
         {products.map((product) => {
