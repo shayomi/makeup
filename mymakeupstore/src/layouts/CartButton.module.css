@@ -1,0 +1,68 @@
+.button {
+  cursor: pointer;
+  font: inherit;
+  background: #f6c641;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.button:hover,
+.button:active {
+  background-color: #917526;
+  border: 1px solid var(--color-bg);
+  transition: all ease-in-out 500ms;
+  transform: inherit;
+}
+
+.icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-right: 0.5rem;
+}
+
+.badge {
+  /* background-color: var(--color-bg-variant);
+  padding: 0.1rem 0.1rem;
+  border-radius: 50px; */
+  margin-left: 0.5rem;
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+}
+
+.title h4 {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+/* .button:hover .badge,
+.button:active .badge {
+  color: black;
+} */
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

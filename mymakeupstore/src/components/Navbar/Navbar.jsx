@@ -5,8 +5,9 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import Brandlink from "../brandlink/Brandlink";
 import SearchBar from "../UI/Search";
+import CartButton from "../../layouts/CartButton";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
     <nav className="max-w-[1240px] w-full fixed z-40 bg-white">
       <div className="flex flex-row px-0 md:px-3 w-[95%] mx-auto py-12 h-[60px] items-center justify-between ">
         <Brandlink />
-        <div className="hidden lg:flex flex-row gap-x-8 px-0 md:px-3">
+        <div className="hidden md:flex flex-row gap-x-8 px-0 md:px-3">
           <SearchBar className="" />
           <NavLink
             to="/"
@@ -38,23 +39,21 @@ const Navbar = () => {
             About
           </NavLink>
           <div className="flex flex-row gap-x-4 px-3 items-center">
-            <AiOutlineHeart size={25} className="cursor-pointer " />
-            <PiShoppingCartLight size={25} className="cursor-pointer " />
+            <CartButton onClick={props.onShowCart} />
           </div>
         </div>
-        <div className="flex flex-row md:ml-12 gap-x-3 md:gap-x-9 px-3 lg:hidden">
-          <SearchBar className=" " />
-          <div className="flex flex-row gap-x-4 px-0 items-center">
-            <PiShoppingCartLight size={25} className="cursor-pointer " />
+        <div className="flex flex-row md:ml-12 gap-x-3 md:gap-x-9 px-3 md:hidden">
+          <div className="  flex flex-row gap-x-4 px-0 items-center">
+            <CartButton />
           </div>
         </div>
-        <div onClick={handleNav} className="block lg:hidden ">
+        <div onClick={handleNav} className="block md:hidden ">
           {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
         </div>
         <div
           className={
             nav
-              ? "fixed left-0 top-0 w-[40%] h-full  bg-[#1e3329] ease-in-out duration-500 "
+              ? "fixed left-0 top-0 w-[60%] h-full  bg-[#1e3329] ease-in-out duration-500 "
               : "ease-in-out duration-500 fixed left-[-100%]"
           }
         >
@@ -63,6 +62,9 @@ const Navbar = () => {
             onClick={handleNav}
           >
             <Brandlink />
+            <div className=" pt-12">
+              <SearchBar />
+            </div>
             <div className="flex flex-col gap-y-8 px-3 py-2 text-white mt-6">
               <NavLink
                 to="/"

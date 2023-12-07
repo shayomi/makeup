@@ -159,42 +159,50 @@ const ProductFilter = () => {
     <div className="mt-10 mb-24">
       <div className="">
         <div className="flex flex-col border-b-[1px] border-slate-300 pb-6 gap-y-4  ">
-          <div className="flex items-center mt-4 px-2">
-            <label className="mr-2 font-primary text-sm">Products:</label>
+          <div className="flex flex-row items-center">
+            <label className="mr-2 font-secondary font-medium text-sm  lg:text-md">
+              Products:
+            </label>
 
             <Swiper
+              className=""
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               breakpoints={{
                 360: { width: 360, slidesPerView: 3 },
                 768: { width: 768, slidesPerView: 5 },
                 1024: { width: 1024, slidesPerView: 7 },
+                1200: { width: 1200, slidesPerView: 9 },
               }}
-              spaceBetween={5}
+              spaceBetween={2}
               navigation
-              pagination={{ clickable: true }}
-              //   scrollbar={{ draggable: true }}
+              // pagination={{ clickable: true }}
+              // scrollbar={{ draggable: true }}
             >
-              <div className="flex">
-                {Array.from(
-                  new Set(products.map((product) => product.product_type))
-                ).map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => handleTypeChange(type)}
-                    className={`${
-                      selectedType === type
-                        ? "bg-[#ffd470] text-dark"
-                        : "bg-transparent text-[11px] text-slate-600"
-                    } border-[1px] border-slate-400 rounded-[8px] py-2 px-4 text-sm font-primary mx-2 focus:outline-none`}
-                  >
-                    {type}
-                  </button>
-                ))}
+              <div className="flex items-center ">
+                <div className="flex flex-row gap-x-2">
+                  {Array.from(
+                    new Set(products.map((product) => product.product_type))
+                  ).map((type) => (
+                    <SwiperSlide>
+                      <button
+                        key={type}
+                        onClick={() => handleTypeChange(type)}
+                        className={`${
+                          selectedType === type
+                            ? "bg-[#ffd470] text-dark"
+                            : "bg-transparent text-[11px] text-slate-600"
+                        } border-[1px] border-slate-400 rounded-[8px] py-2 px-4 text-sm font-primary mx-2 focus:outline-none`}
+                      >
+                        {type}
+                      </button>
+                    </SwiperSlide>
+                  ))}
+                </div>
               </div>
             </Swiper>
           </div>
-          <div className="flex flex-row justify-evenly items-center">
-            <div className="hidden lg:flex items-center mt-4 px-2">
+          <div className="flex flex-col  md:flex-row justify-start items-center">
+            {/* <div className="hidden lg:flex items-center mt-4 px-2">
               <label className="mr-2">Search:</label>
               <input
                 type="text"
@@ -203,14 +211,17 @@ const ProductFilter = () => {
                 placeholder="Search products"
                 className=" w-[300px] text-[11px] font-primary font-normal  border-[1px] border-slate-400 rounded-[8px] py-2 px-4 h-[38px]"
               />
-            </div>
+            </div> */}
 
             <div className="flex  items-center mt-4 px-2">
-              <label className="mr-2 font-primary text-sm"> Brands:</label>
+              <label className="mr-2 font-secondary font-medium text-sm lg:text-md">
+                {" "}
+                Brands:
+              </label>
               <select
                 onChange={(e) => handleBrandChange(e.target.value)}
                 value={selectedBrand}
-                className=" border-[1px] border-slate-400 rounded-[8px] py-2 px-4 text-sm font-primary "
+                className=" border-[1px] border-slate-400 rounded-[8px] py-2 px-4 text-sm font-primary max-w-[300px]"
               >
                 <option value="all">All</option>
                 {Array.from(
@@ -224,7 +235,9 @@ const ProductFilter = () => {
             </div>
 
             <div className="flex items-center mt-4 px-2">
-              <label className="mr-2 font-primary text-sm">Price:</label>
+              <label className="mr-2 font-secondary font-medium text-sm lg:text-md">
+                Price:
+              </label>
               <select
                 onChange={(e) => handlePriceRangeChange(e.target.value)}
                 value={selectedPriceRange}
