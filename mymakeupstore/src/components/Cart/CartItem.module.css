@@ -43,7 +43,7 @@
   }
 }
 
-.cart-item button {
+/* .cart-item button {
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
@@ -63,4 +63,4 @@
 .cart-item button:active {
   background-color: var(--color-bg);
   color: white;
-}
+} */

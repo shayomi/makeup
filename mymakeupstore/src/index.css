@@ -17,6 +17,11 @@
   .btn-primary {
     @apply rounded-[12px] bg-[#ffd470] px-8 text-sm py-2 text-dark  font-primary font-semibold tracking-[0.02em] outline-none hover:bg-[#b39140] transition-all duration-300 flex justify-center items-center;
   }
+
+  .btn-cart {
+    @apply rounded-[12px] bg-[#ffd470] px-3 text-sm py-1 text-dark  font-primary font-semibold tracking-[0.02em] outline-none hover:bg-[#b39140] transition-all duration-300 flex justify-center items-center;
+  }
+
   .btn-dark {
     @apply rounded-[12px] bg-dark px-8 text-sm py-2 text-white-100  font-primary font-semibold tracking-[0.02em] outline-none hover:bg-[#000000] transition-all duration-300 flex justify-center items-center;
   }

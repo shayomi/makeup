@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Loader from "../../Loader";
 import { MdAdd, MdOutlineRemove } from "react-icons/md";
 import CartContext from "../../store/CartContext";
 import CartProvider from "../../store/CartProvider";
+import ProductForm from "./ProductForm";
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
   const { productId } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -66,22 +67,22 @@ const ProductDetails = () => {
               {product.name}
             </h2>
             <div className="flex flex-col gap-y-4  md:flex-row  gap-x-5 ">
-              <div className="flex flex-row gap-x-5 justify-between">
+              <div className="flex flex-col gap-x-5 justify-between ">
                 <h2 className="text-md font-secondary font-semibold text-dark ">
                   $ {product.price}
                 </h2>
-                <div className="flex flex-row gap-x-4 items-center ml-4">
-                  <MdOutlineRemove size={25} />
+                <div className="">
+                  {/* <MdOutlineRemove size={25} />
 
                   <span>
                     <h2 className="text-xl font-secondary font-semibold text-dark">
                       4
                     </h2>
                   </span>
-                  <MdAdd size={25} />
+                  <MdAdd size={25} /> */}
+                  <ProductForm onAddToCart={addToCartHandler} />
                 </div>
               </div>
-              <button className="btn-primary md:ml-10 ml-0">Add to cart</button>
             </div>
             <p className="font-primary text-sm text-dark leading-7 text-justify font-normal mt-6 ">
               {product.description}

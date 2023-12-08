@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
@@ -6,8 +6,22 @@ import { NavLink } from "react-router-dom";
 import Brandlink from "../brandlink/Brandlink";
 import SearchBar from "../UI/Search";
 import CartButton from "../../layouts/CartButton";
+import axios from "axios";
 
 const Navbar = (props) => {
+  const [apiData, setApiData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://makeup-api.herokuapp.com/api/v1/products.json")
+      .then((response) => {
+        setApiData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {
@@ -17,8 +31,8 @@ const Navbar = (props) => {
     <nav className="max-w-[1240px] w-full fixed z-40 bg-white">
       <div className="flex flex-row px-0 md:px-3 w-[95%] mx-auto py-12 h-[60px] items-center justify-between ">
         <Brandlink />
-        <div className="hidden md:flex flex-row gap-x-8 px-0 md:px-3">
-          <SearchBar className="" />
+        <div className="hidden lg:flex flex-row gap-x-8 px-0 md:px-3">
+          <SearchBar className="" data={apiData} />
           <NavLink
             to="/"
             className="px-4 py-2 rounded-[12px] hover:bg-primary  duration-500 ease-in-out"
@@ -44,16 +58,16 @@ const Navbar = (props) => {
         </div>
         <div className="flex flex-row md:ml-12 gap-x-3 md:gap-x-9 px-3 md:hidden">
           <div className="  flex flex-row gap-x-4 px-0 items-center">
-            <CartButton />
+            <CartButton onClick={props.onShowCart} />
           </div>
         </div>
-        <div onClick={handleNav} className="block md:hidden ">
+        <div onClick={handleNav} className="block lg:hidden ">
           {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
         </div>
         <div
           className={
             nav
-              ? "fixed left-0 top-0 w-[60%] h-full  bg-[#1e3329] ease-in-out duration-500 "
+              ? "fixed left-0 top-0 w-[50%] h-full  bg-[#1e3329] ease-in-out duration-500 "
               : "ease-in-out duration-500 fixed left-[-100%]"
           }
         >

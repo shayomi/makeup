@@ -201,8 +201,8 @@ const ProductFilter = () => {
               </div>
             </Swiper>
           </div>
-          <div className="flex flex-col  md:flex-row justify-start items-center">
-            {/* <div className="hidden lg:flex items-center mt-4 px-2">
+          <div className="flex flex-col  md:flex-row justify-start items-center gap-x-6">
+            <div className="hidden lg:flex items-center mt-4 px-2">
               <label className="mr-2">Search:</label>
               <input
                 type="text"
@@ -211,7 +211,7 @@ const ProductFilter = () => {
                 placeholder="Search products"
                 className=" w-[300px] text-[11px] font-primary font-normal  border-[1px] border-slate-400 rounded-[8px] py-2 px-4 h-[38px]"
               />
-            </div> */}
+            </div>
 
             <div className="flex  items-center mt-4 px-2">
               <label className="mr-2 font-secondary font-medium text-sm lg:text-md">
@@ -263,7 +263,7 @@ const ProductFilter = () => {
               >
                 <NavLink to={`/${product.id}`}>
                   <div className="flex flex-col gap-y-4 justify-center ">
-                    <div className="max-w-[100px]  h-[120px]">
+                    <div className="max-w-[100px] mx-auto h-[120px]">
                       <img
                         src={product.image_link}
                         alt="loading"
@@ -273,11 +273,11 @@ const ProductFilter = () => {
                     <h2 className="text-sm font-primary font-medium text-dark">
                       {product.name.substring(0, 80) + " " + "..."}
                     </h2>
-                    <div className="flex flex-col justify-center md:flex-row md:justify-between">
+                    <div className="flex flex-col gap-y-3 justify-center md:flex-row md:justify-between items-center">
                       <h2 className="text-sm font-secondary font-semibold text-dark text-center md:text-start">
                         $ {product.price}
                       </h2>
-                      <button className="rounded-[12px] bg-[#ffd470] px-4 text-[10px] py-1 text-dark  font-primary font-medium tracking-[0.02em] outline-none hover:bg-[#b39140] transition-all duration-300 flex justify-center items-center;">
+                      <button className="rounded-[12px] bg-[#ffd470] px-4 text-[12px] py-2 text-dark  font-primary font-medium tracking-[0.02em] outline-none hover:bg-[#b39140] transition-all duration-300 flex justify-center items-center ;">
                         Shop now
                       </button>
                     </div>
