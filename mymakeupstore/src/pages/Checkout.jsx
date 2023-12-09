@@ -5,6 +5,7 @@ import CartContext from "../store/CartContext";
 import CartItem from "../components/Cart/CartItem";
 import Cart from "../components/Cart/Cart";
 import CartProvider from "../store/CartProvider";
+import Modal from "../components/UI/Modal";
 
 const Checkout = (props) => {
   const cartCtx = useContext(CartContext);
@@ -29,10 +30,7 @@ const Checkout = (props) => {
   return (
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <div
-        className="container mx-auto pt-24 mb-24"
-        onShowCart={showCartHandler}
-      >
+      <div className="w-[95%] mx-auto pt-24 mb-24" onShowCart={showCartHandler}>
         <h1 className="text-2xl font-secondary font-semibold mb-4 ">
           Checkout
         </h1>
@@ -41,7 +39,7 @@ const Checkout = (props) => {
             <h2 className="text-xl font-semibold font-secondary mb-2">
               Order Summary
             </h2>
-            <ul>
+            <ul className="">
               {cartCtx.items.map((item) => (
                 <CartItem
                   key={item.id}
@@ -62,7 +60,7 @@ const Checkout = (props) => {
         </div>
         <div className="mt-6">
           <div className="flex justify-between items-center border-t border-gray-300 pt-4">
-            <span className="text-lg font-semibold font-sendary">
+            <span className="text-lg font-semibold font-secondary">
               Total Amount:
             </span>
             <span className="text-lg font-semibold font-secondary">
@@ -74,7 +72,7 @@ const Checkout = (props) => {
               Submit Order
             </button>
             <button
-              onClick={props.onShowCart}
+              onClick={showCartHandler}
               className="ml-4 text-[red] font-primary font-medium hover:underline"
             >
               Back to Cart

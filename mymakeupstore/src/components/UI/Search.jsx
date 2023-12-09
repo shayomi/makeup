@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
@@ -7,6 +6,11 @@ import axios from "axios";
 function SearchBar({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState([]);
+
+  // Effect to clear suggestions when component mounts
+  useEffect(() => {
+    setFilteredData([]);
+  }, []);
 
   useEffect(() => {
     axios

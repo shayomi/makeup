@@ -19,7 +19,7 @@ const Newsletter = () => {
             odio!
           </p>
           <form className=" pt-2">
-            <label for="email" className="font-bold font-secondary">
+            <label for="email" className="font-bold font-secondary text-[11px]">
               Your Email
             </label>
             <input

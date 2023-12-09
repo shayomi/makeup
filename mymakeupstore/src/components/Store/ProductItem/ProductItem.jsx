@@ -201,8 +201,8 @@ const ProductFilter = () => {
               </div>
             </Swiper>
           </div>
-          <div className="flex flex-col  md:flex-row justify-start items-center gap-x-6">
-            <div className="hidden lg:flex items-center mt-4 px-2">
+          <div className="flex flex-col gap-y-2  md:flex-row justify-start items-center gap-x-6">
+            <div className="flex items-center mt-4 px-2">
               <label className="mr-2">Search:</label>
               <input
                 type="text"
@@ -247,7 +247,6 @@ const ProductFilter = () => {
                 <option value="0-10">$0 - $10</option>
                 <option value="10-20">$10 - $20</option>
                 <option value="20-30">$20 - $30</option>
-                {/* Add more options as needed */}
               </select>
             </div>
           </div>

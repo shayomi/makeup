@@ -4,7 +4,7 @@ import midbanner2 from "../../../assets/img/home/midbanner4.png";
 
 const MiddleBanner = () => {
   return (
-    <div className="w-[95%] mx-auto mt-24">
+    <div className="w-[95%] mx-auto mt-12 md:mt-24">
       <div className="flex flex-row gap-x-4">
         <div className=" w-full lg:flex flex-col gap-y-4 bg-[#dad6d6] lg:w-[70%] ">
           <div className=" mx-auto justify-center px-10 mt-6">
