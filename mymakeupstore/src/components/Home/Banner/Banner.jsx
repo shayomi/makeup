@@ -11,7 +11,7 @@ const Banner = () => {
           </h2>
           <p className="font-primary text-normal text-[11px] md:text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-            magnam in ratione,
+            magnam in r,
           </p>
           <div className="hidden md:flex">
             <button className="btn-primary mt-6">Visit our store</button>
