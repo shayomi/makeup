@@ -4,23 +4,26 @@ import { PiShoppingCartLight } from "react-icons/pi";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import Brandlink from "../brandlink/Brandlink";
-import SearchBar from "../UI/Search";
+// import SearchBar from "../UI/Search";
 import CartButton from "../../layouts/CartButton";
 import axios from "axios";
+import { SearchBar } from "../UI/Search/Searchbar";
+import { SearchResultsList } from "../UI/Search/SearchResultList";
 
 const Navbar = (props) => {
-  const [apiData, setApiData] = useState([]);
+  // const [apiData, setApiData] = useState([]);
+  const [results, setResults] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("http://makeup-api.herokuapp.com/api/v1/products.json")
-      .then((response) => {
-        setApiData(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://makeup-api.herokuapp.com/api/v1/products.json")
+  //     .then((response) => {
+  //       setApiData(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []);
 
   const [nav, setNav] = useState(false);
 
@@ -32,7 +35,11 @@ const Navbar = (props) => {
       <div className="flex flex-row px-0 md:px-3 w-[95%] mx-auto py-12 h-[60px] items-center justify-between ">
         <Brandlink />
         <div className="hidden lg:flex">
-          <SearchBar data={apiData} />
+          {/* <SearchBar data={apiData} /> */}
+          <SearchBar setResults={setResults} />
+          {results && results.length > 0 && (
+            <SearchResultsList results={results} />
+          )}
         </div>
         <div className="hidden sm:flex flex-row gap-x-8 px-0 md:px-3">
           <NavLink
@@ -78,9 +85,7 @@ const Navbar = (props) => {
             onClick={handleNav}
           >
             <Brandlink />
-            <div className=" pt-12">
-              <SearchBar />
-            </div>
+            <div className=" pt-12">{/* <SearchBar /> */}</div>
             <div className="flex flex-col gap-y-8 px-3 py-2 text-white mt-6">
               <NavLink
                 to="/"

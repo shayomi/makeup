@@ -5,7 +5,7 @@ import axios from "axios";
 
 function SearchBar({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([]);
-  const [wordEntered, setWordEntered] = useState([]);
+  const [wordEntered, setWordEntered] = useState("");
 
   // Effect to clear suggestions when component mounts
   useEffect(() => {
