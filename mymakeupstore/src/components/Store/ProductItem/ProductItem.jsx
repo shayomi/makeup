@@ -160,9 +160,9 @@ const ProductFilter = () => {
       <div className="">
         <div className="flex flex-col border-b-[1px] border-slate-300 pb-6 gap-y-4  ">
           <div className="flex flex-row items-center">
-            <label className="mr-2 font-secondary font-medium text-sm  lg:text-md">
+            {/* <label className="mr-2 font-secondary font-medium text-sm  lg:text-md">
               Products:
-            </label>
+            </label> */}
 
             <Swiper
               className=""
@@ -170,7 +170,7 @@ const ProductFilter = () => {
               breakpoints={{
                 360: { width: 360, slidesPerView: 3 },
                 768: { width: 768, slidesPerView: 5 },
-                1024: { width: 1024, slidesPerView: 7 },
+                1024: { width: 1024, slidesPerView: 9 },
                 1200: { width: 1200, slidesPerView: 9 },
               }}
               spaceBetween={2}
@@ -204,13 +204,15 @@ const ProductFilter = () => {
           <div className="flex flex-col gap-y-2  md:flex-row justify-start items-center gap-x-6">
             <div className="flex items-center mt-4 px-2">
               <label className="mr-2">Search:</label>
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => handleSearchChange(e.target.value)}
-                placeholder="Search products"
-                className=" w-[300px] text-[11px] font-primary font-normal  border-[1px] border-slate-400 rounded-[8px] py-2 px-4 h-[38px]"
-              />
+              <div className="border-b-[1px] border-slate-900">
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => handleSearchChange(e.target.value)}
+                  placeholder="Search products"
+                  className=" w-[300px] text-[11px] font-primary font-normal  border-b-[1px] border-slate-400 rounded-[8px] py-2 px-4 h-[38px]"
+                />
+              </div>
             </div>
 
             <div className="flex  items-center mt-4 px-2">
