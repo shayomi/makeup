@@ -9,10 +9,10 @@ const Newsletter = () => {
           <img src={giftbox} alt="image loading" className="" />
         </div>
         <div className="flex flex-col gap-y-4 py-6 px-6">
-          <h2 className="text-xl  font-secondary font-semibold text-dark ">
+          <h2 className="text-lg md:text-xl  font-secondary font-semibold text-dark ">
             We have something for you
           </h2>
-          <p className="font-primary text-sm text-dark leading-6  font-normal">
+          <p className="font-primary text-[11px]  md:text-sm text-dark leading-6  font-normal">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
             iusto ratione? Nemo nam unde sed, totam nobis, labore sequi aut
             dignissimos consequatur atque mollitia odit sapiente hic, quos ullam
@@ -22,11 +22,13 @@ const Newsletter = () => {
             <label for="email" className="font-bold font-secondary text-[11px]">
               Your Email
             </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full border-b-[2px] border-black  bg-transparent"
-            />
+            <div className="border-b-[1px] border-black">
+              <input
+                type="email"
+                id="email"
+                className="w-full border-b-[1px] border-black  bg-transparent pt-3"
+              />
+            </div>
             <button className="btn-dark mt-8">Subscribe</button>
           </form>
         </div>

@@ -8,7 +8,7 @@ const MiddleBanner = () => {
       <div className="flex flex-row gap-x-4">
         <div className=" w-full lg:flex flex-col gap-y-4 bg-[#dad6d6] lg:w-[70%] ">
           <div className=" mx-auto justify-center px-10 mt-6">
-            <h2 className="text-xl font-secondary font-semibold text-dark ">
+            <h2 className="text-lg md:text-xl font-secondary font-semibold text-dark ">
               Natural and Ecological Beauty solutions for you
             </h2>
             <button className="btn-primary mt-4">See more</button>

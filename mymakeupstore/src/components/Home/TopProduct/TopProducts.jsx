@@ -38,10 +38,10 @@ const TopProducts = (props) => {
                     alt={product.name}
                     className="max-w-[100px] w-full mx-auto mix-blend-multiply"
                   />
-                  <h2 className="text-md font-primary font-medium text-dark ">
+                  <h2 className="text-sm font-normal md:text-md font-primary md:font-medium text-dark ">
                     {product.name.substring(0, 50) + " " + "..."}
                   </h2>
-                  <h2 className="text-md font-secondary font-semibold text-dark ">
+                  <h2 className="text-sm  font-medium md:text-md font-secondary md:font-semibold text-dark  ">
                     $ {product.price}
                   </h2>
                 </div>

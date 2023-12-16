@@ -77,7 +77,7 @@ const Navbar = (props) => {
           className={
             nav
               ? "fixed left-0 top-0 w-[50%] h-full  bg-[#1e3329] ease-in-out duration-500 "
-              : "ease-in-out duration-500 fixed left-[-100%]"
+              : "ease-in-out duration-500 fixed left-[-100%] h-full"
           }
         >
           <div
@@ -85,7 +85,16 @@ const Navbar = (props) => {
             onClick={handleNav}
           >
             <Brandlink />
-            <div className=" pt-12">{/* <SearchBar /> */}</div>
+            <div className=" pt-12">
+              {" "}
+              <div className="">
+                {/* <SearchBar data={apiData} /> */}
+                <SearchBar setResults={setResults} />
+                {results && results.length > 0 && (
+                  <SearchResultsList results={results} />
+                )}
+              </div>
+            </div>
             <div className="flex flex-col gap-y-8 px-3 py-2 text-white mt-6">
               <NavLink
                 to="/"
