@@ -28,7 +28,7 @@ const Elegance = () => {
             sapiente! Quasi eaque quibusdam placeat rerum ex voluptatibus
             praesentium porro natus iste quo impedit ipsum culpa, nulla odio
             error saepe. Totam! praesentium porro natus iste quo impedit ipsum
-            culpa, nulla odio error saepe. Totam!
+            culpa, nulla odio error saepe. Tota
           </p>
         </div>
       </div>
