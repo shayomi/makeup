@@ -21,7 +21,7 @@ const Elegance = () => {
             Quasi eaque quibusdam placeat rerum ex voluptatibus praesentium
             porro natus iste quo impedit ipsum culpa, nulla odio error saepe.
             Totam! praesentium porro natus iste quo impedit ipsum culpa, nulla
-            odio error saepe. Totam!ghvjyqew
+            odio error saepe. ndwweed
           </p>
           <p className="font-primary text-[11px]  md:text-sm text-dark leading-7 text-justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
