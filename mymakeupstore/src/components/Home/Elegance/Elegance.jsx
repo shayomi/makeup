@@ -14,7 +14,7 @@ const Elegance = () => {
         </div>
         <div className="flex flex-col space-y-6 px-8 ">
           <h2 className="text-lg md:text-xl font-secondary font-semibold text-dark ">
-            Elegance is what you deserve
+            Elegance is what you Deserve
           </h2>
           <p className="font-primary text-[11px]  md:text-sm text-dark leading-7 text-justify font-normal">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. sapiente!
