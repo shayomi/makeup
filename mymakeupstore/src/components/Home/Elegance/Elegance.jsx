@@ -17,7 +17,7 @@ const Elegance = () => {
             Elegance is what you Deserve
           </h2>
           <p className="font-primary text-[11px]  md:text-sm text-dark leading-7 text-justify font-normal">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. sapiente!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. sapiente
             Quasi eaque quibusdam placeat rerum ex voluptatibus praesentium
             porro natus iste quo impedit ipsum culpa, nulla odio error saepe.
             Totam! praesentium porro natus iste quo impedit ipsum culpa, nulla
