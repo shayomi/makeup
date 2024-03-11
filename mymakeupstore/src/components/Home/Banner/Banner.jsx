@@ -11,8 +11,8 @@ const Banner = () => {
             The new lineup you will swear by the dullness, dryness and breakouts
           </h2>
           <p className="font-primary text-normal text-[11px] md:text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-            magnam in r,
+            Lorem ipsu dolor sit amet consectetur adipisicing elit. Natus magnam
+            in r,
           </p>
           <div className="hidden md:flex">
             <NavLink to="/store">
