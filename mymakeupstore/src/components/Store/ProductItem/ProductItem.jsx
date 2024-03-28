@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { MdOutlineSearch } from "react-icons/md";
 import Loader from "../../../Loader";
+import placeholder from "../../../assets/img/store/placeholder.png";
 
 import { NavLink } from "react-router-dom";
 
@@ -267,8 +268,12 @@ const ProductFilter = () => {
                     <div className="max-w-[100px] mx-auto h-[120px]">
                       <img
                         src={product.image_link}
-                        alt="loading"
-                        className="w-[80%] justify-center mx-auto mix-blend-multiply "
+                        onError={(e) => {
+                          e.target.src = placeholder; // Replace with placeholder image
+                          e.target.onerror = null; // Prevent infinite loop if placeholder image fails to load
+                        }}
+                        alt="Product"
+                        className="w-[80%] justify-center mx-auto mix-blend-multiply"
                       />
                     </div>
                     <h2 className="text-sm font-primary font-medium text-dark">
