@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import placeholder from "../../assets/img/store/placeholder.png";
 
 const RelatedProduct = (props) => {
   const [products, setProducts] = useState([]);
@@ -53,8 +54,12 @@ const RelatedProduct = (props) => {
                   <div className="max-w-[100px]  h-[120px]">
                     <img
                       src={product.image_link}
+                      onError={(e) => {
+                        e.target.src = placeholder; // Replace with placeholder image
+                        e.target.onerror = null; // Prevent infinite loop if placeholder image fails to load
+                      }}
                       alt="loading"
-                      className="w-[80%] justify-center m mx-auto mix-blend-multiply"
+                      className="w-[80%] flex justify-center  mx-auto mix-blend-multiply"
                     />
                     {/* <ProductImage
                       imageUrl={product.image_link}

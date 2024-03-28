@@ -6,6 +6,7 @@ import { MdAdd, MdOutlineRemove } from "react-icons/md";
 import CartContext from "../../store/CartContext";
 import CartProvider from "../../store/CartProvider";
 import ProductForm from "./ProductForm";
+import placeholder from "../../assets/img/store/placeholder.png";
 
 const ProductDetails = (props) => {
   const { productId } = useParams();
@@ -55,6 +56,10 @@ const ProductDetails = (props) => {
           <div className="w-full">
             <img
               src={product.image_link}
+              onError={(e) => {
+                e.target.src = placeholder; // Replace with placeholder image
+                e.target.onerror = null; // Prevent infinite loop if placeholder image fails to load
+              }}
               alt={product.name}
               className="max-w-[300px] w-[200px] mx-auto mix-blend-multiply items-center"
             />
